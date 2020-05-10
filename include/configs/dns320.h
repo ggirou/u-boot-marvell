@@ -1,3 +1,4 @@
+/* SPDX-License-Identifier: GPL-2.0+ */
 /*
  * Copyright (C) 2011
  * Stefan Herbrechtsmeier <stefan@herbrechtsmeier.net>
@@ -6,8 +7,6 @@
  * (C) Copyright 2009
  * Marvell Semiconductor <www.marvell.com>
  * Written-by: Prafulla Wadaskar <prafulla@marvell.com>
- *
- * SPDX-License-Identifier:	GPL-2.0+
  */
 
 #ifndef _CONFIG_DNS320_H
@@ -16,9 +15,8 @@
 /*
  * Machine number definition
  */
-#define MACH_TYPE_DNS320		3985
 #define CONFIG_MACH_TYPE		MACH_TYPE_DNS320
-#define CONFIG_IDENT_STRING		"\nD-Link DNS-320"
+// #define CONFIG_IDENT_STRING		"\nD-Link DNS-320"
 
 /*
  * High Level Configuration Options (easy to change)
@@ -26,23 +24,23 @@
 #define CONFIG_FEROCEON_88FR131		/* CPU Core subversion */
 #define CONFIG_KW88F6281		/* SOC Name */
 #define CONFIG_SKIP_LOWLEVEL_INIT	/* disable board lowlevel_init */
-#define CONFIG_SYS_GENERIC_BOARD
-#define CONFIG_SYS_TCLK			166666667	/* 800Mhz */
+// #define CONFIG_SYS_GENERIC_BOARD
+// #define CONFIG_SYS_TCLK			166666667	/* 800Mhz */
 
 /*
  * Commands configuration
  */
-#define CONFIG_SYS_NO_FLASH		/* Declare no flash (NOR/SPI) */
-#define CONFIG_CMD_DHCP
-#define CONFIG_CMD_ENV
-#define CONFIG_CMD_NAND
-#define CONFIG_CMD_PING
-#define CONFIG_CMD_USB
-#define CONFIG_CMD_IDE
-#define CONFIG_CMD_DATE
-#define CONFIG_SYS_MVFS
+// #define CONFIG_SYS_NO_FLASH		/* Declare no flash (NOR/SPI) */
+// #define CONFIG_CMD_DHCP
+// #define CONFIG_CMD_ENV
+// #define CONFIG_CMD_NAND
+// #define CONFIG_CMD_PING
+// #define CONFIG_CMD_USB
+// #define CONFIG_CMD_IDE
+// #define CONFIG_CMD_DATE
+// #define CONFIG_SYS_MVFS
 
-#define CONFIG_NR_DRAM_BANKS		1
+// #define CONFIG_NR_DRAM_BANKS		1
 
 /*
  * mv-common.h should be defined after CMD configs since it used them
@@ -51,7 +49,6 @@
 #include "mv-common.h"
 
 /* Remove or override few declarations from mv-common.h */
-#undef CONFIG_SYS_PROMPT
 
 /*
  * Ethernet Driver configuration
@@ -69,38 +66,38 @@
 #define CONFIG_SYS_ATA_IDE1_OFFSET      MV_SATA_PORT1_OFFSET
 #endif
 
-/*
- * RTC driver configuration
- */
-#ifdef CONFIG_CMD_DATE
-#define CONFIG_RTC_MV
-#endif
+// /*
+//  * RTC driver configuration
+//  */
+// #ifdef CONFIG_CMD_DATE
+// #define CONFIG_RTC_MV
+// #endif
 
 /*
  * Enable GPI0 support
  */
 #define CONFIG_KIRKWOOD_GPIO
 
-/*
- * Use the HUSH parser
- */
-#define CONFIG_SYS_HUSH_PARSER
+// /*
+//  * Use the HUSH parser
+//  */
+// #define CONFIG_SYS_HUSH_PARSER
 
-/*
- * Console configuration
- */
-#define CONFIG_CONSOLE_MUX
-#define CONFIG_SYS_CONSOLE_IS_IN_ENV
+// /*
+//  * Console configuration
+//  */
+// #define CONFIG_CONSOLE_MUX
+// #define CONFIG_SYS_CONSOLE_IS_IN_ENV
 
-/*
- * Enable device tree support
- */
-#define CONFIG_OF_LIBFDT
+// /*
+//  * Enable device tree support
+//  */
+// #define CONFIG_OF_LIBFDT
 
-/*
- * Display cpu info at boot
- */
-#define CONFIG_DISPLAY_CPUINFO
+// /*
+//  * Display cpu info at boot
+//  */
+// #define CONFIG_DISPLAY_CPUINFO
 
 /*
  * Environment variables configurations
@@ -119,10 +116,7 @@
 /*
  * Default environment variables
  */
-#define MTDIDS_DEFAULT			"nand0=orion_nand"
-
-#define MTDPARTS_DEFAULT		"mtdparts=orion_nand:" \
-	"896k(u-boot),128k(u-boot-env),5m(kernel),-(rootfs)\0"
+// #define MTDIDS_DEFAULT			"nand0=orion_nand"
 
 #define CONFIG_EXTRA_ENV_SETTINGS \
 	"stdin=serial\0" \
@@ -131,7 +125,7 @@
 	"loadaddr=0x800000\0" \
 	"autoload=no\0" \
 	"console=ttyS0,115200\0" \
-	"mtdparts="MTDPARTS_DEFAULT \
+	"mtdparts="CONFIG_MTDPARTS_DEFAULT \
 	"optargs=\0" \
 	"bootenv=uEnv.txt\0" \
 	"importbootenv=echo Importing environment ...; " \
@@ -169,9 +163,9 @@
 
 #endif /* _CONFIG_DNS320_H */
 
-/*
- * Enable EFI/GPT Partitions
- */
-#ifndef CONFIG_EFI_PARTITION
-#define CONFIG_EFI_PARTITION
-#endif
+// /*
+//  * Enable EFI/GPT Partitions
+//  */
+// #ifndef CONFIG_EFI_PARTITION
+// #define CONFIG_EFI_PARTITION
+// #endif
